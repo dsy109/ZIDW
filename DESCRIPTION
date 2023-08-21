@@ -1,0 +1,17 @@
+Package: ZIDW
+Type: Package
+Title: Zero-Inflated Discrete Weibull 
+Version: 0.1.0
+Date: 2023-02-10
+Authors@R: c(person("Peng", "Yeh", role = c("aut", "cre"),
+	email = "peng.yeh0301@uky.edu"))
+Depends: R (>= 4.1.0)
+Imports: DWreg, actuar, maxLik, COUNT, gtools, matrixcalc, DiscreteWeibull, dplyr, ggplot2, purrr, tibble
+Description: Functions for analyzing Zero Inflated Discrete Weibull regression. 
+    This package includes the parameter estimations for both regression and univariate, 
+    the distribution functions, functions to generate randomized quantile residuals, and pseudo R2.
+License: GPL (>= 2)
+NeedsCompilation: no
+Packaged: 2023-02-10 16:59:48 UTC; pengyeh
+Author: Peng Yeh [aut, cre]
+Maintainer: Peng Yeh <peng.yeh0301@uky.edu>

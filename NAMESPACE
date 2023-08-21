@@ -1,0 +1,39 @@
+# Default NAMESPACE created by R
+# Remove the previous line if you edit this file
+
+# Export all names
+exportPattern(".")
+
+# Import all packages listed as Imports or Depends
+import(
+  DWreg,
+  actuar,
+  maxLik,
+  COUNT,
+  gtools,
+  matrixcalc,
+  DiscreteWeibull,
+  dplyr,
+  ggplot2,
+  purrr,
+  tibble
+)
+
+# S3 method
+S3method(logLik, zidw)
+S3method(AIC, zidw)
+S3method(BIC, zidw)
+S3method(print, zidw)
+S3method(coef, zidw)
+S3method(predict, zidw)
+
+# Import from
+  importFrom("stats", "runif", "rbinom", "as.formula", "coef", "constrOptim", "glm", "lm",
+             "model.matrix", "terms", "logLik", "qnorm", "uniroot", "AIC", "BIC", "model.frame", 
+	     "model.response", "predict")
+  importFrom("dplyr", "between", "mutate")
+  importFrom("ggplot2", "ggplot")
+  importFrom("purrr", "map_dfc")
+  importFrom("tibble", "tibble")
+#  importFrom()
+#  importFrom("utils", "head", "tail")
