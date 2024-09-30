@@ -257,7 +257,7 @@ zidw_reg <- function(qformula, betaformula = ~ 1, ziformula = ~ 1, data, lam = N
                 SE = SE,
                 convergence = out$convergence,
                 nall = n,
-                res = res,
+                residuals = res,
                 fitted_values = Yhat,
                 response = Y,
                 model_matrix_q = X,
