@@ -247,6 +247,17 @@ zidw_reg <- function(qformula, betaformula = ~ 1, ziformula = ~ 1, data, lam = N
       success <- max(round(q^k^beta, 8)) == 0
       k <- k * 10
     }
+
+    vc <- tryCatch(abs(-solve(as.matrix(out1$hessian))),
+                   error = function(e){
+                     warning(e$message, call = FALSE)
+                     k <- nrow(as.matrix(out1$hessian))
+                     return(matrix(NA, k, k))
+                   })
+
+    colnames(vc) <- rownames(vc) <- c(paste("q", colnames(X), sep = "_"),
+                                      paste('beta', colnames(Z), sep = '_'),
+                                      paste("zero",  colnames(W), sep = "_"))
     
     
     
@@ -260,6 +271,7 @@ zidw_reg <- function(qformula, betaformula = ~ 1, ziformula = ~ 1, data, lam = N
                 residuals = res,
                 fitted_values = Yhat,
                 response = Y,
+                vcov = vc,
                 model_matrix_q = X,
                 model_matrix_beta = Z,
                 model_matrix_zi = W,
