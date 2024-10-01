@@ -24,8 +24,12 @@ S3method(logLik, zidw)
 S3method(AIC, zidw)
 S3method(BIC, zidw)
 S3method(print, zidw)
+S3method(print, summary.zidw)
 S3method(coef, zidw)
 S3method(predict, zidw)
+S3method(summary, zidw)
+S3method(vcov, zidw)
+S3method(residuals, zidw)
 
 # Import from
   importFrom("stats", "runif", "rbinom", "as.formula", "coef", "constrOptim", "glm", "lm",
