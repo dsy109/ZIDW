@@ -288,6 +288,72 @@ zidw_reg <- function(qformula, betaformula = ~ 1, ziformula = ~ 1, data, lam = N
 
 
 
+summary.zidw <- function(object,...)
+{
+  ## residuals
+  object$residuals <- residuals(object, type = "pearson")
+  
+  ## compute z statistics
+  kb <- length(object$coefficients$beta)
+  kq <- length(object$coefficients$q)
+  kz <- length(object$coefficients$zero)
+  
+  se <- sqrt(diag(object$vcov))
+  coef <- c(object$coefficients$q, object$coefficients$beta, object$coefficients$zero)  
+  # if(object$dist == "negbin") {
+  #   coef <- c(coef[1:kc], "Log(theta)" = log(object$theta), coef[(kc+1):(kc+kz)])
+  #   se <- c(se[1:kc], object$SE.logtheta, se[(kc+1):(kc+kz)])
+  #   kc <- kc+1
+  # }
+  zstat <- coef / se
+  pval <- 2 * pnorm(-abs(zstat))
+  coef <- cbind(coef, se, zstat, pval)
+  colnames(coef) <- c("Estimate", "Std. Error", "z value", "Pr(>|z|)")
+  object$coefficients$q <- coef[1:kq,,drop = FALSE]
+  object$coefficients$beta <- coef[(kq + 1) : (kq + kb),, drop = FALSE]
+  object$coefficients$zero <- coef[(kq + kb + 1) : (kq + kb + kz),,drop = FALSE]
+  
+  ## delete some slots
+  object$fitted.values <- object$terms <- object$model <- object$y <-
+    object$x <- object$levels <- object$contrasts <- object$start <- NULL
+  
+  ## return
+  class(object) <- "summary.zidw"
+  object
+}
+
+print.summary.zidw <- function(x, digits = max(3, getOption("digits") - 3), ...)
+{
+  
+  cat("\nCall:", deparse(x$call, width.cutoff = floor(getOption("width") * 0.85)), "", sep = "\n")
+  
+  if(!as.logical(x$convergence)) {
+    cat("model did not converge\n")
+  } else {
+    
+    cat("Pearson residuals:\n")
+    print(structure(quantile(x$residuals),
+                    names = c("Min", "1Q", "Median", "3Q", "Max")), digits = digits, ...)  
+    
+    cat(paste("\nq model coefficients (with logit link):\n", sep = ""))
+    printCoefmat(x$coefficients$q, digits = digits, signif.legend = FALSE)
+    
+    cat(paste("\nBeta model coefficients (with log link):\n", sep = ""))
+    printCoefmat(x$coefficients$beta, digits = digits, signif.legend = FALSE)
+    
+    cat(paste("\nZero-inflation model coefficients (binomial with logit link):\n", sep = ""))
+    printCoefmat(x$coefficients$zero, digits = digits, signif.legend = FALSE)
+    
+    if(getOption("show.signif.stars") & any(rbind(x$coefficients$q, x$coefficients$beta, x$coefficients$zero)[,4] < 0.1, na.rm=TRUE))
+      cat("---\nSignif. codes: ", "0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1", "\n")
+    
+    # if(x$dist == "negbin") cat(paste("\nTheta =", round(x$theta, digits), "\n")) else cat("\n")
+    # cat(paste("Number of iterations in", x$method, "optimization:", tail(na.omit(x$optim$count), 1), "\n"))
+    cat("Log-likelihood:", formatC(x$loglik, digits = digits), "on", x$nall - x$df.residual, "Df\n")
+  }
+  
+  invisible(x)
+}
 
 
 
