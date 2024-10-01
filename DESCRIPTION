@@ -4,7 +4,7 @@ Title: Zero-Inflated Discrete Weibull
 Version: 0.1.0
 Date: 2023-02-10
 Authors@R: c(person("Peng", "Yeh", role = c("aut", "cre"),
-	email = "peng.yeh0301@uky.edu"))
+	email = "peng.yeh@merck.com"))
 Depends: R (>= 4.1.0)
 Imports: DWreg, actuar, maxLik, COUNT, gtools, matrixcalc, DiscreteWeibull, dplyr, ggplot2, purrr, tibble
 URL: https://github.com/dsy109/ZIDW
@@ -15,4 +15,4 @@ License: GPL (>= 2)
 NeedsCompilation: no
 Packaged: 2023-02-10 16:59:48 UTC; pengyeh
 Author: Peng Yeh [aut, cre]
-Maintainer: Peng Yeh <peng.yeh0301@uky.edu>
+Maintainer: Peng Yeh <peng.yeh@merck.com>
