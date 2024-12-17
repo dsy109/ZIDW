@@ -106,9 +106,10 @@ zidw_uni <- function(y, par = NULL, method = c('MLE', 'mde'), B = NULL, max_meth
 
     fit <- list('MLE' = out$maximum,
                 'coefficients' = list(q = out$estimate[3], beta = out$estimate[2], zero = out$estimate[1]),
-                'convergence' = paste(paste('Return code', out$code), out$message),
+                'convergence' = out$code,
                 'iteration' = paste(out$iteration, 'iterations'),
-                'SE' = sqrt(diag(solve(-out$hessian))))
+                'SE' = sqrt(diag(solve(-out$hessian))),
+                'hessian' = out$hessian)
     
     return(fit)
   }
