@@ -208,7 +208,7 @@ zidw_reg <- function(qformula, betaformula = ~ 1, ziformula = ~ 1, data, lam = N
       }
       
     }
-    
+   out1 <- out 
     
   }else{
     out <- constrOptim(theta = c(lam0, beta0, q0), f = ll, y = Y, X = X, Z = Z, W = W, ui = ui_all, ci = ci_all, grad = NULL, control=list(fnscale=-1))
