@@ -6,7 +6,7 @@
 
 \title{Internal 'ZIDW' Functions}
 \description{
-  Internal functions for the package \code{zidw}.
+  Internal functions for the package \code{ZIDW}.
 }
 \usage{
 dw.parest2(data, method = "likelihood", method.opt = "NR")
@@ -16,10 +16,10 @@ pdw2(x, q = exp(-1), beta = 1)
 
 \arguments{
   \item{data}{Data that is a vector.}
-  \item{method}{Either "likelihood" or "proportion"}
-  \item{method.opt}{Optimization criterion used in maxLik (default is "NR")}
-  \item{x}{vector of quantile}
-  \item{q, beta}{Parameters of the distribution}
+  \item{method}{Either \code{"likelihood"} or \code{"proportion"}.}
+  \item{method.opt}{Optimization criterion used in \code{maxLik} (default is \code{"NR"}).}
+  \item{x}{Vector of quantiles.}
+  \item{q, beta}{Parameters of the distribution.}
 }
 
 \details{

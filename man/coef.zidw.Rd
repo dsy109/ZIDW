@@ -1,16 +1,16 @@
 \name{coef.zidw}
-\title{Print Coefficients}
+\title{Print Coefficients from a ZIDW Model Fit}
 \alias{coef.zidw}
 \usage{
 \method{coef}{zidw}(object, ...)
 }
 \description{
-  Print the coefficients of ZIDW object.
+  Print the coefficients of a ZIDW object.
 }
 
 \arguments{
-  \item{object}{a ZIDW object to extract the model coefficients}
-  \item{...}{further arguments}
+  \item{object}{A ZIDW object to extract the model coefficients.}
+  \item{...}{Further arguments.}
 } 
 
 
@@ -21,7 +21,8 @@
 ## data
 data("rwm1984", package = 'COUNT')
 
-zidw_out <- zidw_reg(docvis ~ outwork + female + age, ziformula = ~ age + female,
+zidw_out <- zidw_reg(docvis ~ outwork + female + age, 
+                     ziformula = ~ age + female,
                      betaformula = ~ 1, data = rwm1984[1:100, ], beta = .1)
 
 coef.zidw(zidw_out)

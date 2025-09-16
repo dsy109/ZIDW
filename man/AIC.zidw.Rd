@@ -1,5 +1,5 @@
 \name{AIC.zidw}
-\title{Akaike's An Information Criterion for ZIDW}
+\title{AIC and BIC for ZIDW Model Fits}
 \alias{AIC.zidw}
 \alias{BIC.zidw}
 \usage{
@@ -7,16 +7,16 @@
 \method{BIC}{zidw}(object, ...)
 }
 \description{
-  Generic function calculating Akaike's 'An Information Criterion' for one or several fitted model objects for which a log-likelihood value can be obtained, according to the formula -2*log-likelihood + k*npar, where npar represents the number of parameters in the fitted model, and k = 2 for the usual AIC, or k = log(n) (n being the number of observations) for the so-called BIC or SBC (Schwarz's Bayesian criterion).
+  Generic function calculating AIC or BIC for ZIDW model fits.
 }
 
 \arguments{
-  \item{object}{a fitted ZIDW model object for which there exists a logLik method to extract the corresponding log-likelihood, or an object inheriting from class logLik.}
-  \item{...}{optionally more fitted model objects}
-  \item{k}{numeric, the penalty per parameter to be used; default = 2}
+  \item{object}{A fitted ZIDW model object for which there exists a \code{logLik} method to extract the corresponding log-likelihood, or an object inheriting from class \code{logLik}.}
+  \item{...}{Optionally more fitted model objects.}
+  \item{k}{Numeric value for the penalty per parameter to be used; default = 2.}
 } 
   \value{
-  a numeric value with the corresponding AIC
+  A numeric value with the corresponding AIC or BIC.
   
 } \seealso{
   \code{\link{logLik}} \code{\link{AIC}}
@@ -24,14 +24,15 @@
 
 
 \references{
-Sakamoto, Y., Ishiguro, M., and Kitagawa G. (1986). Akaike Information Criterion Statistics. D. Reidel Publishing Company.
+Sakamoto, Y., Ishiguro, M., and Kitagawa G. (1986), \emph{Akaike Information Criterion Statistics}. D. Reidel Publishing Company.
 } 
 
 \examples{ 
 ## data
 data("rwm1984", package = 'COUNT')
 
-zidw_out <- zidw_reg(docvis ~ outwork + female + age, ziformula = ~ age + female,
+zidw_out <- zidw_reg(docvis ~ outwork + female + age, 
+                     ziformula = ~ age + female,
                      betaformula = ~ 1, data = rwm1984[1:100, ], beta = .1)
 
 AIC(zidw_out)
