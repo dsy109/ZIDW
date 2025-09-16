@@ -1,15 +1,6 @@
-citHeader("To cite HoRM in publications use:")
-
-citEntry(entry = "book",
-  title        = "{Handbook of Regression Methods}",
-  author       = personList(as.person("Derek S. Young")),
-  publisher      = "CRC Press/Taylor & Francis Group",
-  year         = "2017",
-  address       = "Boca Raton, FL",
-
-  textVersion  =
-  paste("Derek S. Young (2017).",
-        "Handbook of Regression Methods.",
-        "CRC Press/Taylor & Francis Group.",
-        "Boca Raton, FL.")
+bibentry(
+  "Manual",
+  title = "{ZIDW}: Tools for Analyzing Zero-Inflated Discrete Weibull Models",
+  author = "Peng Yeh, Derek S. Young",
+  year = 2025,
 )
