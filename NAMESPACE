@@ -28,13 +28,12 @@ S3method(print, summary.zidw)
 S3method(coef, zidw)
 S3method(predict, zidw)
 S3method(summary, zidw)
-S3method(vcov, zidw)
-S3method(residuals, zidw)
 
 # Import from
   importFrom("stats", "runif", "rbinom", "as.formula", "coef", "constrOptim", "glm", "lm",
              "model.matrix", "terms", "logLik", "qnorm", "uniroot", "AIC", "BIC", "model.frame", 
 	     "model.response", "predict")
+  importFrom("stats", "pnorm", "printCoefmat", "quantile", "residuals")
   importFrom("dplyr", "between", "mutate")
   importFrom("ggplot2", "ggplot")
   importFrom("purrr", "map_dfc")
