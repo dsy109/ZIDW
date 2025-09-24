@@ -3,20 +3,17 @@
 \alias{ZIDW}
 \docType{package}
 \title{
-Tools for Analyzing Zero-Inflated Discrete Weibull Models
+Zero-Inflated Discrete Weibull Models
 }
 \description{
-Functions for analyzing zero-inflated discrete Weibull (ZIDW) regression models. 
-    This package includes the parameter estimations for both regression and univariate settings, 
-    the distribution functions, functions to generate randomized quantile residuals and a pseudo R2,
-    and plotting of rootograms.
+Parameter estimation for zero-inflated discrete Weibull (ZIDW) regression models, the univariate setting, distribution functions, functions to generate randomized quantile residuals a pseudo R2, and plotting of rootograms.
 }
 \details{
 \tabular{ll}{
 Package: \tab ZIDW\cr
 Type: \tab Package\cr
 Version: \tab 0.1.0\cr
-Date: \tab 2025-09-15\cr
+Date: \tab 2025-09-22\cr
 Imports: \tab DWreg, actuar, maxLik, COUNT, gtools, matrixcalc, DiscreteWeibull, dplyr, ggplot2, purrr, tibble\cr
 License: \tab GPL (>= 2)\cr
 }

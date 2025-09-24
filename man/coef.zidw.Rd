@@ -13,7 +13,9 @@
   \item{...}{Further arguments.}
 } 
 
-
+  \value{
+  Coefficients extracted from the ZIDW object \code{object}. This will be a named numeric vector. 
+}
 
 
 

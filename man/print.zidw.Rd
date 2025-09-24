@@ -14,8 +14,15 @@
   \item{...}{Further arguments passed to or from other methods.}
 } 
 
-
-
+\value{
+  Returns an object of class \code{zidw} based on the object \code{x} with mostly the same output when printing output from
+  an object of class \code{lm}.  Whereas an \code{lm} object has one \code{model.matrix} in its output,
+  use of \code{print.zidw} returns three model matrices, one each for the model parameters \eqn{q} and \eqn{beta} as well as for the
+  zero-inflation component.
+}
+ \seealso{
+  \code{\link{print.lm}}
+} 
 
 
 \examples{ 

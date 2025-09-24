@@ -30,11 +30,13 @@ bootstrap_lrt(data, B, tol = -1)
 
 
 \examples{ 
-\dontrun{
+\donttest{
 ## data
 data("rwm1984", package = 'COUNT')
 
-test <- bootstrap_lrt(rwm1984, B = 1000)
+set.seed(1)
+test <- suppressWarnings(bootstrap_lrt(rwm1984, B = 20))
+test
 }
 }
 

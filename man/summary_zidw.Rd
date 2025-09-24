@@ -20,9 +20,14 @@
  Additional information about the ZIDW fit represented by \code{object} is extracted and included as components of
   \code{object}.  The returned object has a \code{\link{print}} method.
 }
+\value{
+  Currently, limited results from an object of class \code{"zidw"} is returned.  The output is of class \code{summary.zidw}.
+  Future versions of this code will attempt to mimic \code{summary.glm}.
+}
 
-
-
+ \seealso{
+  \code{\link{summary.glm}}
+} 
 
 
 \examples{ 

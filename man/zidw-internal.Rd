@@ -22,6 +22,11 @@ pdw2(x, q = exp(-1), beta = 1)
   \item{q, beta}{Parameters of the distribution.}
 }
 
+\value{
+  These functions yield different outputs, which are called for their desired effects within
+  other functions.  Thus, they are usually not to be called by the user.
+}
+
 \details{
   These are usually not to be called by the user.
 }

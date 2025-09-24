@@ -51,11 +51,13 @@ data("rwm1984", package = 'COUNT')
 ## MLE method
 zidw_out <- zidw_uni(rwm1984$docvis)
                      
-\dontrun{                     
+\donttest{                     
 ## mde without standard error estimation
+set.seed(1)
 zidw_out2 <- zidw_uni(rwm1984$docvis, method = 'mde')
 
 ## mde with bootstrap standard error estimation
+set.seed(1)
 zidw_out2 <- zidw_uni(rwm1984$docvis, method = 'mde', B = 5)
 }
 
