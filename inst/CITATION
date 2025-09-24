@@ -1,6 +1,6 @@
 bibentry(
   "Manual",
-  title = "{ZIDW}: Tools for Analyzing Zero-Inflated Discrete Weibull Models",
+  title = "{ZIDW}: Zero-Inflated Discrete Weibull Models",
   author = "Peng Yeh, Derek S. Young",
   year = 2025,
 )
