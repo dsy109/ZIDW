@@ -1,4 +1,4 @@
-## ZIDW: Tools for Analyzing Zero-Inflated Discrete Weibull Models	<a href='https://github.com/dsy109/ZIDW'><img src='man/Figures/ZIDW.png' align="right" height="138.5" /></a>
+## ZIDW: Zero-Inflated Discrete Weibull Models	<a href='https://github.com/dsy109/ZIDW'><img src='man/Figures/ZIDW.png' align="right" height="138.5" /></a>
 
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)	
 ![CRAN/METACRAN](https://img.shields.io/cran/l/ZIDW)	
