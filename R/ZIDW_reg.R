@@ -326,6 +326,10 @@ print.summary.zidw <- function(x, digits = max(3, getOption("digits") - 3), ...)
 {
   
   cat("\nCall:", deparse(x$call, width.cutoff = floor(getOption("width") * 0.85)), "", sep = "\n")
+
+  if(length(x$coefficients) == 3){
+    x$convergence <- !as.logical(x$convergence)
+    }
   
   if(!as.logical(x$convergence)) {
     cat("model did not converge\n")
